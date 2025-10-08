@@ -3,6 +3,8 @@ package core.basesyntax;
 import java.util.Random;
 
 public class FigureSupplier {
+
+    private static final int MAX_SIZE = 24;
     private static final int DEFAULT_RADIUS = 10;
     private static final int FIGURE_COUNT = 5;
     private final Random random = new Random();
@@ -13,31 +15,31 @@ public class FigureSupplier {
             case 0:
                 return new Circle(
                         colorSupplier.getRandomColor(),
-                        generateRandomSize()
+                        randSize()
                 );
             case 1:
                 return new Square(
                         colorSupplier.getRandomColor(),
-                        generateRandomSize()
+                        randSize()
                 );
             case 2:
                 return new Rectangle(
                         colorSupplier.getRandomColor(),
-                        generateRandomSize(),
-                        generateRandomSize()
+                        randSize(),
+                        randSize()
                 );
             case 3:
                 return new RightTriangle(
                         colorSupplier.getRandomColor(),
-                        generateRandomSize(),
-                        generateRandomSize()
+                        randSize(),
+                        randSize()
                 );
             case 4:
                 return new IsoscelesTrapezoid(
                         colorSupplier.getRandomColor(),
-                        generateRandomSize(),
-                        generateRandomSize(),
-                        generateRandomSize()
+                        randSize(),
+                        randSize(),
+                        randSize()
                 );
             default:
                 return getDefaultFigure();
@@ -48,7 +50,7 @@ public class FigureSupplier {
         return new Circle(Color.WHITE, DEFAULT_RADIUS);
     }
 
-    private int generateRandomSize() {
-        return random.nextInt(10) + 1;
+    private double randSize() {
+        return random.nextDouble() * MAX_SIZE + 1;
     }
 }

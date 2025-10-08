@@ -11,19 +11,7 @@ public class IsoscelesTrapezoid extends Figure {
         this.lowerBase = lowerBase;
         this.height = height;
     }
-
-    public double getUpperBase() {
-        return upperBase;
-    }
-
-    public double getLowerBase() {
-        return lowerBase;
-    }
-
-    public double getHeight() {
-        return height;
-    }
-
+    
     @Override
     public double getArea() {
         return ((upperBase
